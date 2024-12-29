@@ -8,7 +8,7 @@ This project is designed to assist in tree planting activities using advanced te
 
 ### Step 1: Clone the Repository
 ```bash
-git clone https://github.com/YourUsername/Johnny_Tree_planting_assistance_system.git
+git clone https://github.com/NattapongSt/Johnny_Tree_planting_assistance_system.git
 cd Johnny_Tree_planting_assistance_system
 ```
 
@@ -42,7 +42,8 @@ The system uses the Gemini API for data access. You need to set your API key as 
 ### Step 1: Replace the Placeholder in Code
 Locate the placeholder for the API key in the source code and replace it with your actual API key:
 ```python
-API_KEY = "Your Gemini API Key"
+def configure_genai():
+    genai.configure(api_key=os.getenv('Your Gemini API Key')) 
 ```
 
 ### Step 2: Set Environment Variable
@@ -63,7 +64,7 @@ To make it permanent:
 
 Once the setup is complete, you can run the application using the following command:
 ```bash
-python app.py
+uvicorn main:app --host 0.0.0.0 --port 8000     
 ```
 
 Ensure that your API key and dependencies are correctly configured.
